@@ -1,0 +1,154 @@
+/* -------------------------
+   Blue Theme - style.css
+   ------------------------- */
+
+/* Root (Light default variables) */
+:root{
+  --bg: #f7fbff;
+  --text: #0b2545;
+  --muted: #5b6b7a;
+  --primary: #1e90ff;         /* blue */
+  --accent: #0b67d0;
+  --card-bg: #ffffff;
+  --nav-bg: rgba(255,255,255,0.9);
+  --shadow: rgba(11,37,69,0.08);
+  --radius: 10px;
+}
+
+/* Base styles */
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family: "Inter", "Poppins", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Header / Hero */
+header{
+  text-align:center;
+  padding:56px 20px;
+  background: linear-gradient(180deg, rgba(30,144,255,0.12), transparent 60%);
+}
+header h1{
+  font-size:40px;
+  color:var(--accent);
+  margin-bottom:8px;
+}
+header p{
+  font-size:16px;
+  color:var(--muted);
+}
+
+/* Navigation */
+nav{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  padding:12px 20px;
+  position:sticky;
+  top:0;
+  z-index:40;
+  background:var(--nav-bg);
+  border-bottom:1px solid rgba(11,37,69,0.05);
+  backdrop-filter: blur(6px);
+}
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  font-weight:600;
+  padding:6px 10px;
+  border-radius:8px;
+  transition: background .2s, color .2s;
+}
+nav a:hover{
+  background: rgba(30,144,255,0.08);
+  color:var(--accent);
+}
+
+/* Sections (card-like) */
+.section {
+  width:90%;
+  max-width:960px;
+  margin:26px auto;
+  background:var(--card-bg);
+  padding:22px;
+  border-radius:var(--radius);
+  box-shadow: 0 8px 30px var(--shadow);
+  border: 1px solid rgba(11,37,69,0.03);
+}
+.section h2{
+  font-size:22px;
+  color:var(--accent);
+  margin-bottom:10px;
+  padding-bottom:6px;
+  border-bottom:2px solid rgba(14,88,178,0.06);
+}
+.section p, .section li{
+  color:var(--muted);
+  font-size:16px;
+}
+
+/* Lists */
+ol.skills, ul.projects {
+  list-style:none;
+  margin-top:10px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+ol.skills li, ol.projects li {
+  background: linear-gradient(90deg, rgba(30,144,255,0.08), rgba(11,103,208,0.04));
+  padding:8px 12px;
+  border-radius:8px;
+  color:var(--accent);
+  font-weight:600;
+}
+
+/* Contact */
+.contact-line { margin-top:8px; color:var(--muted); }
+
+/* Footer */
+footer{
+  text-align:center;
+  padding:14px 8px;
+  color:var(--muted);
+  margin-top:28px;
+}
+
+/* Button style (used if you add buttons) */
+.btn {
+  display:inline-block;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color:#fff;
+  padding:10px 16px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  border:none;
+  cursor:pointer;
+  transition: transform .12s ease, box-shadow .12s;
+}
+.btn:hover{ transform: translateY(-3px); box-shadow:0 10px 30px rgba(11,37,69,5.08); }
+
+/* BLUE THEME CLASS (apply on body to force vibrant blue mode) */
+.blue-theme{
+  --bg: linear-gradient(180deg,#e9f2ff,#f4f9ff 60%);
+  --text: #08203a;
+  --muted: #274e73;
+  --primary: #0077ff;
+  --accent: #005ecc;
+  --card-bg: rgba(255,255,255,0.96);
+  --nav-bg: rgba(255,255,255,0.85);
+  --shadow: rgba(3,40,80,0.08);
+}
+
+/* Responsive */
+@media (max-width:768px){
+  header h1{ font-size:28px; }
+  .section{ width:94%; padding:18px; }
+  nav{ gap:10px; padding:10px; }
+  ul.skills li, ul.projects li { font-size:14px; padding:7px 10px; }
+}
